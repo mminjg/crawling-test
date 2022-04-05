@@ -28,7 +28,7 @@ for tr in soup.find_all('tr')[1:]:
     title = tr.select('td')[1].text.strip()
     link = url + tr.select('td')[1].find('a')['href']
     dateStr = tr.select('td')[2].text.strip()
-    date = re.sub('\((월|화|수|목|금)\)', '', dateStr).replace('.','-')
+    date = re.sub('\((월|화|수|목|금|토|일)\)', '', dateStr).replace('.','-')
     info_list.append((title, date, link, "YES24"))
 
 # db 연결
